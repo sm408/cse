@@ -17,22 +17,39 @@ import java.util.Scanner;
 public class areas {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the radius of the circle: ");
-        double radius = sc.nextDouble();
-        System.out.println("Enter the length of the rectangle: ");
-        double length = sc.nextDouble();
-        System.out.println("Enter the breadth of the rectangle: ");
-        double breadth = sc.nextDouble();
-        System.out.println("Enter the three sides of the triangle: ");
-        double side1 = sc.nextDouble();
-        double side2 = sc.nextDouble();
-        double side3 = sc.nextDouble();
-        shape circle = new circle(radius);
-        shape rectangle = new rectangle(length, breadth);
-        shape triangle = new triangle(side1, side2, side3);
-        System.out.println("Area of the circle is: " + circle.area());
-        System.out.println("Area of the rectangle is: " + rectangle.area());
-        System.out.println("Area of the triangle is: " + triangle.area());
+        
+        
+        
+        System.out.println("""
+                           What polygon you want to calculate the area of: 
+                           1) Circle
+                           2) Rectangle
+                           3) Triangle
+                           """);
+        int choice = sc.nextInt();
+        if(choice == 1){
+            System.out.println("Enter the radius of the circle: ");
+            double radius = sc.nextDouble();
+            shape circle = new circle(radius);
+            System.out.println("Area of the circle is: " + circle.area());
+        }
+        else if(choice == 2){
+            System.out.println("Enter the length of the rectangle: ");
+            double length = sc.nextDouble();
+            System.out.println("Enter the breadth of the rectangle: ");
+            double breadth = sc.nextDouble();
+            shape rectangle = new rectangle(length, breadth);
+            System.out.println("Area of the rectangle is: " + rectangle.area());
+
+        }
+        else if(choice == 3){
+            System.out.println("Enter the three sides of the triangle: ");
+            double side1 = sc.nextDouble();
+            double side2 = sc.nextDouble();
+            double side3 = sc.nextDouble();
+            shape triangle = new triangle(side1, side2, side3);
+            System.out.println("Area of the triangle is: " + triangle.area());
+        }
     }
 }
 

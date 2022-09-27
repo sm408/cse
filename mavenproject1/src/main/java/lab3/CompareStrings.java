@@ -1,8 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 package lab3;
 
 /**
@@ -62,10 +57,7 @@ public class CompareStrings {
     };
     
     static void Sort(String arr[], int n){
-        for(int i=1;i<=n;i++){
-            Arrays.sort(arr);
-               
-        }
+        Arrays.sort(arr);
         System.out.println("Sorted String is: ");
         for (String arr1 : arr) {
             System.out.println(arr1 + "\t");
