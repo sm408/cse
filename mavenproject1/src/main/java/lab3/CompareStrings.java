@@ -83,7 +83,7 @@ public class CompareStrings {
             Sort(array, size);
         }
         else{
-            System.out.println("Input the ize of array: ");
+            System.out.println("Input the size of array: ");
             int size = input.nextInt();
             int arr[] = new int[size];
             System.out.println("Input the numbers in array:");

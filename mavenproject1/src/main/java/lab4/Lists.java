@@ -109,7 +109,7 @@ public class Lists{
         list = list.insert(list, 6);
         list = list.insert(list, 7);
         list = list.insert(list, 8);
-       // list = list.delete(list, 5);
+        list = list.delete(list, 4);
         list = list.insert(list, 16,5);
         
         list.printList(list);
