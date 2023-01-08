@@ -38,7 +38,6 @@ public class Notepad2 extends JFrame implements ActionListener, CaretListener, M
   private JMenuItem newItem, openItem, saveItem, saveAsItem, exitItem;
   private JMenuItem undoItem, cutItem, copyItem, pasteItem, deleteItem, findItem, findNextItem, replaceItem, goToItem, selectAllItem, timeDateItem;
   private JMenuItem wordWrapItem, fontItem;
-  
   private JMenuItem viewHelpItem, aboutNotepadItem;
   private JTextArea textArea;
   private JScrollPane scrollPane;
@@ -656,6 +655,55 @@ if (e.getSource() == newItem) {
 
     }
 
+
+}
+
+class AboutDialog {
+
+    AboutDialog(Notepad2 aThis) {
+        // write about dialog code here
+
+        // a dialog box to tell about the author
+
+        // use the following message
+        String message = "Name: Shubham Maurya";
+
+        // use the following title
+        String title = "About";
+
+        // use the following icon
+        ImageIcon icon = new ImageIcon("src/main/java/TextEditorGUI/TryingShapes/author.png");
+
+        // close the dialog box when the user clicks on the OK button
+        JOptionPane.showMessageDialog(aThis, message, title, JOptionPane.INFORMATION_MESSAGE, icon);
+        
+        
+        }
+
+}
+
+class HelpDialog {
+
+    HelpDialog(Notepad2 aThis) {
+        // write help dialog code here
+
+        // show short help message in a dialog box
+
+        // use the following message
+        String message = "Short help message";
+
+        // use the following title
+        String title = "Help";
+
+        // use the following icon
+        ImageIcon icon = new ImageIcon("src/main/java/TextEditorGUI/TryingShapes/help.png");
+
+        // close the dialog box when the user clicks on the OK button
+        JOptionPane.showMessageDialog(aThis, message, title, JOptionPane.INFORMATION_MESSAGE, icon);
+
+        
+        
+    }
 
 }
 

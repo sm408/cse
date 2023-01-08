@@ -1,4 +1,4 @@
-package TextEditorGUI.TryingShapes;
+package FinalProject;
 
 /**
  *
@@ -12,14 +12,14 @@ import java.awt.event.*;
 import java.awt.geom.Area;
 import java.io.*;
 
-public class Notepad extends JFrame implements ActionListener {
+public class Note extends JFrame implements ActionListener {
 private JTextArea textArea;
 private JMenuBar menuBar;
 private JMenu fileMenu, editMenu;
 private JMenuItem newFile, openFile, saveFile, saveAsFile, exit;
 private JMenuItem cut, copy, paste, selectAll, find, replace;
 
-public Notepad() {
+public Note() {
 // initialize the text area
 textArea = new JTextArea();
 textArea.setFont(new Font("Calibri", Font.PLAIN, 14));
@@ -80,7 +80,7 @@ textArea.setWrapStyleWord(true);
   setJMenuBar(menuBar);
 
   // set frame properties
-  setTitle("Notepad");
+  setTitle("Note");
   setSize(800, 600);
   setLocationRelativeTo(null);
   setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -92,7 +92,6 @@ public void actionPerformed(ActionEvent e) {
 // handle menu item actions
 if (e.getSource() == newFile) {
 // clear the text area
-
 textArea.setText("");
 
 } else if (e.getSource() == openFile) {
@@ -155,39 +154,39 @@ textArea.copy();
 textArea.paste();
 } else if (e.getSource() == selectAll) {
 // select all the text
-textArea.selectAll();
-} else if (e.getSource() == find) {
+        textArea.selectAll();
+    } else if (e.getSource() == find) {
 // show a dialog to find a word in the text area
-String word = JOptionPane.showInputDialog(this, "Enter the word to find:");
-if (word != null) {
-int startIndex = textArea.getText().indexOf(word);
-if (startIndex != -1) {
-int endIndex = startIndex + word.length();
-textArea.select(startIndex, endIndex);
-} else {
-JOptionPane.showMessageDialog(this, "Word not found");
-}
-}
-} else if (e.getSource() == replace) {
+        String word = JOptionPane.showInputDialog(this, "Enter the word to find:");
+        if (word != null) {
+            int startIndex = textArea.getText().indexOf(word);
+            if (startIndex != -1) {
+                int endIndex = startIndex + word.length();
+                textArea.select(startIndex, endIndex);
+            } else {
+                JOptionPane.showMessageDialog(this, "Word not found");
+            }
+        }
+    } else if (e.getSource() == replace) {
 // show a dialog to replace a word in the text area
-String findWord = JOptionPane.showInputDialog(this, "Enter the word to find:");
-if (findWord != null) {
-int startIndex = textArea.getText().indexOf(findWord);
-if (startIndex != -1) {
-int endIndex = startIndex + findWord.length();
-textArea.select(startIndex, endIndex);
-String replaceWord = JOptionPane.showInputDialog(this, "Enter the word to replace:");
-if (replaceWord != null) {
-textArea.replaceRange(replaceWord, startIndex, endIndex);
-}
-} else {
-JOptionPane.showMessageDialog(this, "Word not found");
-}
-}
-}
+        String findWord = JOptionPane.showInputDialog(this, "Enter the word to find:");
+        if (findWord != null) {
+            int startIndex = textArea.getText().indexOf(findWord);
+            if (startIndex != -1) {
+                int endIndex = startIndex + findWord.length();
+                textArea.select(startIndex, endIndex);
+                String replaceWord = JOptionPane.showInputDialog(this, "Enter the word to replace:");
+                if (replaceWord != null) {
+                    textArea.replaceRange(replaceWord, startIndex, endIndex);
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Word not found");
+            }
+        }
+    }
 }
 
 public static void main(String[] args) {
-new Notepad();
+new Note();
 }
 }
